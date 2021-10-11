@@ -1,6 +1,7 @@
 // import
 const path = require("path");
 const HtmlPlugin = require("html-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 // export
 module.exports = {
@@ -19,8 +20,13 @@ module.exports = {
 
   // 번들링 후 결과물 처리 방식 등 다양한 플러그인들을 설정
   plugins: [
+    // index.html 연결!
     new HtmlPlugin({
       template: "./index.html",
+    }),
+    // static 파일 연결!
+    new CopyPlugin({
+      patterns: [{ from: "static" }],
     }),
   ],
   devServer: {
