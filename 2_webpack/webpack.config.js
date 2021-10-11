@@ -26,6 +26,10 @@ module.exports = {
         // 순서가 바뀌면 안된다.
         use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
       },
+      {
+        test: /\.js$/,
+        use: ["babel-loader"],
+      },
     ],
   },
 
