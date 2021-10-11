@@ -18,13 +18,13 @@ module.exports = {
     clean: true,
   },
 
-  // main.js 안에서 css 모듈을 불러올 수 있게 설정!
+  // main.js 안에서 css/sass 모듈을 불러올 수 있게 설정!
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.s?css$/,
         // 순서가 바뀌면 안된다.
-        use: ["style-loader", "css-loader"],
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
     ],
   },
