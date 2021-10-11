@@ -18,6 +18,17 @@ module.exports = {
     clean: true,
   },
 
+  // main.js 안에서 css 모듈을 불러올 수 있게 설정!
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        // 순서가 바뀌면 안된다.
+        use: ["style-loader", "css-loader"],
+      },
+    ],
+  },
+
   // 번들링 후 결과물 처리 방식 등 다양한 플러그인들을 설정
   plugins: [
     // index.html 연결!
@@ -29,6 +40,8 @@ module.exports = {
       patterns: [{ from: "static" }],
     }),
   ],
+
+  // 개발 서버 오픈시 host부분을 -> localhost로 설정하겠다!
   devServer: {
     host: "localhost",
   },
