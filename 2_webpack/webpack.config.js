@@ -24,7 +24,7 @@ module.exports = {
       {
         test: /\.s?css$/,
         // 순서가 바뀌면 안된다.
-        use: ["style-loader", "css-loader", "sass-loader"],
+        use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
       },
     ],
   },
